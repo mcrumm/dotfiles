@@ -14,9 +14,9 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Set computer name (as done via System Preferences → Sharing)
 sudo scutil --set ComputerName "crumm's MacBook Pro"
-sudo scutil --set HostName "murphy"
-sudo scutil --set LocalHostName "murphy.sealab.local"
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "murphy.sealab.local"
+sudo scutil --set HostName "stormy"
+sudo scutil --set LocalHostName "stormy.sealab.local"
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "stormy.sealab.local"
 
 # Menu bar: disable transparency
 defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
