@@ -96,3 +96,6 @@ if has("autocmd")
 	" Treat .json files as .js
 	autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
 endif
+
+" Pathogen (http://github.com/tpope/vim-pathogen)
+execute pathogen#infect()
