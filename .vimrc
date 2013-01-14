@@ -44,6 +44,8 @@ set cursorline
 set expandtab
 " Make tabs as wide as two spaces
 set tabstop=2
+" Indent 2 spaces
+set shiftwidth=2
 " Show “invisible” characters
 set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
 set list
