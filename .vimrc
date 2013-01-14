@@ -40,6 +40,8 @@ syntax on
 colorscheme Tomorrow-Night-Bright
 " Highlight current line
 set cursorline
+" Convery tabs to spaces
+set expandtab
 " Make tabs as wide as two spaces
 set tabstop=2
 " Show “invisible” characters
