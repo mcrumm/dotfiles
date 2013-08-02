@@ -144,3 +144,8 @@ function unquarantine() {
 		xattr -r -d "$attribute" "$@"
 	done
 }
+
+# Set a tab name in iTerm2
+function tabname () {
+  echo -ne "\033]0;"$@"\007"
+}
