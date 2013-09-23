@@ -131,3 +131,8 @@ alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"
 # Flush memcached
 alias mflush="printf \"flush_all\nquit\n\" | nc localhost 11211"
 alias veewee="bundle exec veewee"
+
+# Composer/Symfony2-related commands
+
+alias crspic="composer run-script post-install-cmd"
+alias acad="app/console assetic:dump"
