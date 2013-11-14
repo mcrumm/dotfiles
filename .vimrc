@@ -37,7 +37,7 @@ set number
 " Enable syntax highlighting
 syntax on
 " Set colorscheme
-colorscheme Tomorrow-Night-Bright
+colorscheme base16-tomorrow
 " Highlight current line
 set cursorline
 " Convery tabs to spaces
