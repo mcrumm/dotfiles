@@ -1,5 +1,5 @@
 # Add `~/bin` to the `$PATH`
-export PATH="$(brew --prefix josegonzalez/php/php55)/bin:$HOME/bin:$PATH"
+export PATH="$(brew --prefix josegonzalez/php/php54)/bin:$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
