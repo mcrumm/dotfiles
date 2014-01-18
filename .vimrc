@@ -36,8 +36,9 @@ set secure
 set number
 " Enable syntax highlighting
 syntax on
+"let base16colorspace=256  " Access colors present in 256 colorspace
 " Set colorscheme
-colorscheme base16-tomorrow
+colorscheme Tomorrow-Night
 " Highlight current line
 set cursorline
 " Convery tabs to spaces
