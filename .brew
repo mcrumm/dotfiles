@@ -25,8 +25,9 @@ brew install narwhal
 # Install more recent versions of some OS X tools
 brew tap homebrew/dupes
 brew install homebrew/dupes/grep
-brew tap josegonzalez/homebrew-php
-brew install php54
+brew tap homebrew/versions
+brew tap homebrew/php
+brew install php55
 
 # These two formulae didn’t work well last time I tried them:
 #brew install homebrew/dupes/vim
