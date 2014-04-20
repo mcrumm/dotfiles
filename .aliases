@@ -134,5 +134,5 @@ alias veewee="bundle exec veewee"
 
 # Composer/Symfony2-related commands
 
-alias crspic="composer run-script post-install-cmd"
-alias acad="app/console assetic:dump"
+alias cpic="composer run-script post-install-cmd"
+alias ad="app/console assetic:dump"
