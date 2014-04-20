@@ -38,7 +38,8 @@ set number
 syntax on
 "let base16colorspace=256  " Access colors present in 256 colorspace
 " Set colorscheme
-colorscheme Tomorrow-Night
+set background=dark
+colorscheme base16-tomorrow
 " Highlight current line
 set cursorline
 " Convery tabs to spaces
