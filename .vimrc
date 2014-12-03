@@ -108,3 +108,4 @@ let g:SuperTabDefaultCompletionType = ""
 
 " Pathogen (http://github.com/tpope/vim-pathogen)
 execute pathogen#infect()
+call pathogen#helptags()
