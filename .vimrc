@@ -103,5 +103,8 @@ if has("autocmd")
 	autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
 endif
 
+" SuperTab
+let g:SuperTabDefaultCompletionType = ""
+
 " Pathogen (http://github.com/tpope/vim-pathogen)
 execute pathogen#infect()
