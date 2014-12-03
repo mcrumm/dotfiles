@@ -1,5 +1,8 @@
+#Add boxen config
+source /opt/boxen/env.sh
+
 # Add `~/bin` to the `$PATH`
-export PATH="$(brew --prefix homebrew/php/php55)/bin:$(brew --prefix homebrew/php/php55)/lib/php:$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH"
+export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
