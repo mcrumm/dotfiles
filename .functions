@@ -149,3 +149,8 @@ function unquarantine() {
 function tabname () {
   echo -ne "\033]0;"$@"\007"
 }
+
+# Send a message via terminal-notifier
+function growl() {
+  terminal-notifier -activate com.googlecode.iterm2 -title "#!!" -subtitle "A message from your shell:" -message "$@"
+}

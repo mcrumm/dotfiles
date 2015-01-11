@@ -130,9 +130,18 @@ alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"
 
 # Flush memcached
 alias mflush="printf \"flush_all\nquit\n\" | nc localhost 11211"
+
+# Bundle shortcuts
 alias veewee="bundle exec veewee"
+alias rake="bundle exec rake"
+alias rspec="bundle exec rspec"
 
 # Composer/Symfony2-related commands
 
 alias cpic="composer run-script post-install-cmd"
 alias ad="app/console assetic:dump"
+
+# Android Tools
+
+alias adbd="adb devices"
+
