@@ -103,8 +103,28 @@ if has("autocmd")
 	autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
 endif
 
+" netrw settings
+let g:netrw_liststyle=3
+
 " SuperTab
 let g:SuperTabDefaultCompletionType = ""
+
+" vim-rspec mappings
+let g:rspec_command = 'call Send_to_Tmux("rake {spec}\n")'
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
+map <Leader>r :call Send_to_Tmux('rake spec_prep')<CR>
+map <Leader>n :call Send_to_Tmux('rake spec_standalone')<CR>
+
+" phpspec-vim mappings
+let g:phpspec_executable = 'phpspec'
+let g:phpspec_command = 'call Send_to_Tmux("{command}\n")'
+map <Leader>pa :PhpSpecRun<CR>
+map <Leader>pp :PhpSpecRunCurrent<CR>
+map <Leader>pd :PhpSpecDesc
+map <Leader>ps :PhpSpecSwitch<CR>
 
 " Pathogen (http://github.com/tpope/vim-pathogen)
 execute pathogen#infect()
