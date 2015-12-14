@@ -1,3 +1,6 @@
+# ulimit for yosemite
+ulimit -n 65536 65536
+
 #Add boxen config
 source /opt/boxen/env.sh
 
