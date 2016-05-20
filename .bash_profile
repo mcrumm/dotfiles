@@ -1,6 +1,3 @@
-#Add boxen config
-source /opt/boxen/env.sh
-
 # Add `relative bin paths` to the `$PATH`
 export PATH="$HOME/bin:./bin:$HOME/.composer/vendor/bin:./vendor/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 
