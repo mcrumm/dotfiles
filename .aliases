@@ -19,6 +19,7 @@ alias m="mate ."
 alias s="subl ."
 alias o="open"
 alias oo="open ."
+alias pj="python -m json.tool"
 
 # Require rm confirmation
 alias rm="rm -i"
@@ -139,8 +140,10 @@ alias veewee="bundle exec veewee"
 alias rake="bundle exec rake"
 alias rspec="bundle exec rspec"
 
-# Composer/Symfony2-related commands
+# PHP/Composer/Symfony2-related commands
 
+alias php='php -dzend_extension=xdebug.so'
+alias cx='php $(which composer)'
 alias cpic="composer run-script post-install-cmd"
 alias ad="app/console assetic:dump"
 
