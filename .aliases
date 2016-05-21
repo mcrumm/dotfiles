@@ -147,6 +147,10 @@ alias cx='php $(which composer)'
 alias cpic="composer run-script post-install-cmd"
 alias ad="app/console assetic:dump"
 
+# HHVM
+
+alias hc="hhvm -v ResourceLimit.SocketDefaultTimeout=30 -v Http.SlowQueryThreshold=30000 -v Eval.Jit=false /usr/local/bin/composer"
+
 # Android Tools
 
 alias adbd="adb devices"
