@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Make sure we’re using the latest Homebrew
+brew update
+
+# Install cask
+brew tap caskroom/cask
+
+Caskfile="$HOME/Caskfile"
+
+if [[ ! -f $Caskfile ]]; then
+  echo "Create a file at \"$Caskfile\" containing the casks you wish to install, one per line."
+  exit 1
+fi
+
+# Install from Caskfile
+while read c; do
+  brew cask install $c
+done <$Caskfile
+
+# Cleanup
+brew cleanup
+brew cask cleanup
