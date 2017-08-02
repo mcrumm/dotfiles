@@ -1,3 +1,8 @@
+" Use the Solarized Dark theme
+set background=dark
+colorscheme solarized
+let g:solarized_termtrans=1
+
 " Make Vim more useful
 set nocompatible
 " Use the OS clipboard by default (on versions compiled with `+clipboard`)
@@ -25,6 +30,9 @@ set directory=~/.vim/swaps
 if exists("&undodir")
 	set undodir=~/.vim/undo
 endif
+
+" Don’t create backups when editing files in certain directories
+set backupskip=/tmp/*,/private/tmp/*
 
 " Respect modeline in files
 set modeline
@@ -101,6 +109,8 @@ if has("autocmd")
 	filetype on
 	" Treat .json files as .js
 	autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
+	" Treat .md files as Markdown
+	autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
 endif
 
 " netrw settings
@@ -117,14 +127,6 @@ map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 map <Leader>r :call Send_to_Tmux('rake spec_prep')<CR>
 map <Leader>n :call Send_to_Tmux('rake spec_standalone')<CR>
-
-" phpspec-vim mappings
-let g:phpspec_executable = 'phpspec'
-let g:phpspec_command = 'call Send_to_Tmux("{command}\n")'
-map <Leader>pa :PhpSpecRun<CR>
-map <Leader>pp :PhpSpecRunCurrent<CR>
-map <Leader>pd :PhpSpecDesc
-map <Leader>ps :PhpSpecSwitch<CR>
 
 " Pathogen (http://github.com/tpope/vim-pathogen)
 execute pathogen#infect()
