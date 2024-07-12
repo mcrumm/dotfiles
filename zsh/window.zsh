@@ -1,4 +1,4 @@
-# From http://dotfiles.org/~_why/.zshrc
+# From http://dotfiles.org/~_why/.zshrc (link defunct)
 # Sets the window title nicely no matter where you are
 function title() {
   # escape '%' chars in $1, make nonprintables visible
