@@ -2,12 +2,17 @@ cask_args appdir: '/Applications'
 
 tap 'homebrew/bundle'
 
+brew 'autoconf'
 brew 'coreutils'
 brew 'curl'
+brew 'fop'
 brew 'gh'
 brew 'git'
 brew 'grc'
+brew 'libxslt'
+brew 'openssl'
 brew 'wget'
+brew 'wxwidgets'
 
 cask '1password'
 cask 'visual-studio-code'
