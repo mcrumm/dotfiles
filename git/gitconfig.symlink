@@ -1,40 +1,140 @@
-# Local/private config goes in the include
 [include]
+
+        # Local/private config goes in the include
         path = ~/.gitconfig.local
-[hub]
-        protocol = https
+
 [alias]
+
+        # Shorcuts
         co = checkout
-        promote = !$ZSH/bin/git-promote
-        wtf     = !$ZSH/bin/git-wtf
-        rank-contributors = !$ZSH/bin/git-rank-contributors
-        count   = !git shortlog -sn
+
+        # Show the diff between the latest commit and the current state.
+        d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+
+        # View abbreviated SHA, description, and history graph of the latest 20 commits.
+        l = log --pretty=oneline -n 20 --graph --abbrev-commit
+
+        # Show verbose output about tags, branches or remotes
+        tags = tag -l
+        branches = branch --all
+        remotes = remote --verbose
+
+        # Amend the currently staged files to the latest commit.
+        amend = commit --amend --reuse-message=HEAD
+
+        # List contributors with number of commits.
+        count = shortlog --summary --numbered
+
+        # Show the user email for the current repository.
+        whoami = config user.email
+
 [color]
-        diff = auto
-        status = auto
-        branch = auto
-        ui = true
+
+        # Use colors in Git commands that are capable of colored output when
+        # outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
+        ui = auto
+
+[color "branch"]
+
+        current = yellow reverse
+        local = yellow
+        remote = green
+
+[color "diff"]
+
+        meta = yellow bold
+        frag = magenta bold # line info
+        old = red # deletions
+        new = green # additions
+
+[color "status"]
+
+        added = yellow
+        changed = green
+        untracked = cyan
+
 [core]
+        # Use custom `.gitignore`.
         excludesfile = ~/.gitignore
+
         editor = vim
+
+        # Prevent showing files whose names contain non-ASCII symbols as unversioned.
+        # http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
+        precomposeunicode = false
+
+        # Make `git rebase` safer on macOS.
+        # More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
+        trustctime = false
+
+        # Speed up commands involving untracked files such as `git status`.
+        # https://git-scm.com/docs/git-update-index#_untracked_cache
+        untrackedCache = true
+
+        # Treat spaces before tabs and all kinds of trailing whitespace as an error.
+        # [default] trailing-space: looks for spaces at the end of a line
+        # [default] space-before-tab: looks for spaces before tabs at the beginning of a line
+        whitespace = space-before-tab,-indent-with-non-tab,trailing-space
+
 [apply]
-        whitespace = nowarn
+
+        # Detect whitespace errors when applying a patch.
+        whitespace = fix
+
+[branch]
+
+        # Show most recently changed branches first.
+        sort = -committerdate
+
+[commit]
+
+        # https://help.github.com/articles/signing-commits-using-gpg/
+        gpgsign = false
+
 [mergetool]
+
         keepBackup = false
+
 [difftool]
+
         prompt = false
+
 [help]
+
+        # Automatically correct and execute mistyped commands.
         autocorrect = 1
+
+[merge]
+
+        # Include summaries of merged commits in newly created merge commit messages
+        log = true
+
 [push]
-        # See `git help config` (search for push.default)
+
+        # Refer to `git help config` (search for push.default)
         # for more information on different options of the below setting.
+        #
+        # Also https://git-scm.com/docs/git-config#git-config-pushdefault
         #
         # Setting to git 2.0 default to suppress warning message
         default = simple
+
+        # Make `git push` push relevant annotated tags when pushing branches out.
+        followTags = true
+
 [credential]
-	helper = osxkeychain
-[diff "spaceman-diff"]
-  command = /opt/homebrew/bin/spaceman-diff
+
+        helper = osxkeychain
+
+[diff]
+
+        # Detect copies as well as renames.
+        renames = copies
+
+[diff "bin"]
+
+        # Use `hexdump` to diff binary files.
+        textconv = hexdump -v -C
 
 [init]
-	defaultBranch = main
+        defaultBranch = main
