@@ -15,6 +15,7 @@ brew 'wget'
 brew 'wxwidgets'
 
 cask '1password'
+cask 'livebook'
 cask 'visual-studio-code'
 cask 'vlc'
 cask 'zed'
