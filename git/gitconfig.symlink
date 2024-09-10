@@ -120,6 +120,9 @@
         # Make `git push` push relevant annotated tags when pushing branches out.
         followTags = true
 
+	# assume --set-upstream on default push when no upstream tracking exists for the current branch
+	autoSetupRemote = true
+
 [credential]
 
         helper = osxkeychain
