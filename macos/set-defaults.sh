@@ -336,6 +336,11 @@ defaults write com.apple.Safari FindOnPageMatchesWordStartsOnly -bool false
 # Remove useless icons from Safari’s bookmarks bar
 defaults write com.apple.Safari ProxiesInBookmarksBar "()"
 
+# Always show Safari's "URL display" tab in the lower left on mouseover. Strangely
+# like, everyone and their LLMs on the internet thinks this is ShowStatusBar, but
+# it's not.
+defaults write com.apple.Safari ShowOverlayStatusBar -bool true
+
 # Enable the Develop menu and the Web Inspector in Safari
 defaults write com.apple.Safari.SandboxBroker ShowDevelopMenu -bool true
 defaults write com.apple.Safari IncludeDevelopMenu -bool true
