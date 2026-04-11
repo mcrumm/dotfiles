@@ -17,6 +17,7 @@ brew 'wget'
 brew 'wxwidgets'
 
 cask '1password'
+cask 'ghostty'
 cask 'handbrake-app'
 cask 'livebook'
 cask 'quicklook-video'
