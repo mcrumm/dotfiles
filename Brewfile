@@ -15,6 +15,8 @@ brew 'wget'
 brew 'wxwidgets'
 
 cask '1password'
+cask 'claude-code'
+cask 'conductor'
 cask 'ghostty'
 cask 'handbrake-app'
 cask 'iina'
