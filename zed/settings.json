@@ -3,7 +3,9 @@
     "metrics": false
   },
   "vim_mode": false,
+  "ui_font_family": "Monaspace Neon",
   "ui_font_size": 16,
+  "buffer_font_family": "Monaspace Neon",
   "buffer_font_size": 14,
   "theme": "One Dark",
   "format_on_save": "on",
