@@ -10,7 +10,8 @@ if ! type mise &>/dev/null; then
 fi
 
 # Bring in the kerl environment variables
-source $ZSH/elixir/kerl.zsh
+DOTFILES_ELIXIR="$(cd "$(dirname "$0")" && pwd)"
+source "$DOTFILES_ELIXIR/kerl.zsh"
 
 echo "> mise use --global erlang@latest"
 mise use --global erlang@latest
