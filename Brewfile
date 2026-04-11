@@ -21,7 +21,7 @@ cask 'font-source-code-pro'
 
 cask '1password'
 cask 'claude-code'
-cask 'conductor'
+#cask 'conductor'
 cask 'ghostty'
 cask 'handbrake-app'
 cask 'iina'
