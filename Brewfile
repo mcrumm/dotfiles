@@ -17,6 +17,7 @@ brew 'wxwidgets'
 
 cask '1password'
 cask 'livebook'
+cask 'quicklook-video'
 cask 'visual-studio-code'
 cask 'vlc'
 cask 'zed'
