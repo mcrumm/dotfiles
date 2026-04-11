@@ -15,6 +15,10 @@ brew 'openssl'
 brew 'wget'
 brew 'wxwidgets'
 
+cask 'font-jetbrains-mono'
+cask 'font-monaspace'
+cask 'font-source-code-pro'
+
 cask '1password'
 cask 'claude-code'
 cask 'conductor'
