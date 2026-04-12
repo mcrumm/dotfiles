@@ -31,3 +31,7 @@ macos-option-as-alt = true
 # Input
 mouse-hide-while-typing = true
 copy-on-select = clipboard
+
+# Prompt Navigation
+keybind = cmd+up=jump_to_prompt:-1
+keybind = cmd+down=jump_to_prompt:1
