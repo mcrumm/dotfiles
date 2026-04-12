@@ -12,6 +12,8 @@ brew 'grc'
 brew 'libxslt'
 brew 'mise'
 brew 'openssl'
+brew 'tree'
+brew 'uv'
 brew 'wget'
 brew 'wxwidgets'
 
