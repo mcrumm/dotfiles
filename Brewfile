@@ -2,6 +2,7 @@ cask_args appdir: '/Applications'
 
 brew 'atuin'
 brew 'autoconf'
+brew 'btop'
 brew 'coreutils'
 brew 'curl'
 brew 'delta'
