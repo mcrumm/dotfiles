@@ -22,6 +22,7 @@ cask 'font-monaspace'
 cask 'font-source-code-pro'
 
 cask '1password'
+cask 'android-commandlinetools'
 cask 'claude-code'
 #cask 'conductor'
 cask 'ghostty'
