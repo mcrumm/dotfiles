@@ -21,6 +21,9 @@ background = #000000
 background-opacity = 0.81
 background-blur-radius = 16
 
+# Scrollback
+scrollback-limit = none
+
 # Cursor
 cursor-style = block
 cursor-style-blink = false
