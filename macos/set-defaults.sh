@@ -89,6 +89,15 @@ defaults write com.apple.screensaver askForPasswordDelay -int 0
 mkdir -p "${HOME}/Screenshots"
 defaults write com.apple.screencapture location -string "${HOME}/Screenshots"
 
+# Set the PicturesFolderIcon on the Screenshots folder (idempotent)
+if [ ! -f "${HOME}/Screenshots/Icon"$'\r' ]; then
+  swift -e '
+    import Cocoa
+    let icon = NSImage(contentsOfFile: CommandLine.arguments[2])!
+    NSWorkspace.shared.setIcon(icon, forFile: CommandLine.arguments[1], options: [])
+  ' "${HOME}/Screenshots" "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/PicturesFolderIcon.icns"
+fi
+
 # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
 defaults write com.apple.screencapture type -string "png"
 
