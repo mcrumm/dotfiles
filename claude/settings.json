@@ -106,7 +106,7 @@
     "skill-creator@claude-plugins-official": true
   },
   "syntaxHighlightingDisabled": false,
-  "effortLevel": "high",
+  "effortLevel": "xhigh",
   "skipDangerousModePermissionPrompt": true,
   "thinking": {
     "type": "adaptive",
