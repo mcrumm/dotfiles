@@ -9,4 +9,4 @@
 #
 #   $ a
 #   # => opens the AI client. yeah, easy peasy.
-claude --dangerously-skip-permissions
+claude --dangerously-skip-permissions "$@"
