@@ -16,3 +16,12 @@ fi
 
 ln -sf "$DOTFILES_CLAUDE/settings.json" "$CLAUDE_CONFIG_DIR/settings.json"
 echo "  Linked Claude Code settings.json"
+
+# Symlink each skill directory into ~/.claude/skills/
+mkdir -p "$CLAUDE_CONFIG_DIR/skills"
+for skill in "$DOTFILES_CLAUDE"/skills/*/; do
+  [ -d "$skill" ] || continue
+  name=$(basename "$skill")
+  ln -sfn "${skill%/}" "$CLAUDE_CONFIG_DIR/skills/$name"
+  echo "  Linked skill: $name"
+done

@@ -71,6 +71,11 @@
         # [default] space-before-tab: looks for spaces before tabs at the beginning of a line
         whitespace = space-before-tab,-indent-with-non-tab,trailing-space
 
+        # Global hooks: pre-commit runs `lab project check` on staged
+        # plan files, then chains to the repo-local pre-commit. See
+        # ~/.dotfiles/git/hooks/pre-commit for the shadowing caveat.
+        hooksPath = ~/.dotfiles/git/hooks
+
         # Custom pager for syntax highlighting in diffs
         pager = delta
 

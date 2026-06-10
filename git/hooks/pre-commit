@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+# Global pre-commit (core.hooksPath = ~/.dotfiles/git/hooks).
+#
+# Validates staged project-plan files (PROJECT.md, .project/plans/*.md)
+# with `lab project check` before the commit lands — the commit-time
+# half of the plan-checker loop. The Claude PostToolUse hook catches
+# Edit/Write-tool saves; this catches everything else (Bash heredocs,
+# manual edits, other tools).
+#
+# CAVEAT: a global core.hooksPath shadows per-repo .git/hooks for every
+# hook type. This script chains to the repo-local pre-commit at the
+# end, so repos with their own pre-commit keep working. Repos that set
+# core.hooksPath themselves (husky etc.) override the global and never
+# reach this. Other hook types (commit-msg, pre-push, …) have no global
+# script here, so git simply skips them — add a chaining stub if a repo
+# ever needs one.
+#
+# Fail-open on missing/old lab: an unbootstrapped machine must still
+# commit. Schema reference: homelab/homelab → docs/projects.md.
+set -uo pipefail
+
+plan_files=()
+while IFS= read -r f; do
+  case "$f" in
+    PROJECT.md | .project/plans/*.md) plan_files+=("$f") ;;
+  esac
+done < <(git diff --cached --name-only --diff-filter=ACMR)
+
+if [ "${#plan_files[@]}" -gt 0 ]; then
+  LAB=$(command -v lab || true)
+  if [ -n "$LAB" ] && [ -x "$LAB" ]; then
+    # NB: checks the worktree content of staged files, not the index —
+    # fine for whole-file workflows; partial staging of a plan file can
+    # slip through (CI still catches it).
+    out=$("$LAB" project check "${plan_files[@]}" 2>&1)
+    status=$?
+    if [ "$status" -ne 0 ]; then
+      # A lab predating the verb must not block commits.
+      if ! printf '%s' "$out" | grep -q 'unknown command "project"'; then
+        printf '%s\n' "$out" >&2
+        echo "pre-commit: plan schema check failed — fix the file(s) or see docs/projects.md (homelab/homelab)" >&2
+        exit 1
+      fi
+    fi
+  fi
+fi
+
+# Chain to the repo-local hook the global hooksPath shadows.
+# NB: must be $GIT_DIR/hooks literally — `git rev-parse --git-path hooks`
+# resolves through core.hooksPath and would exec this script forever.
+git_dir=$(git rev-parse --git-dir 2>/dev/null)
+local_hook="$git_dir/hooks/pre-commit"
+if [ -n "$git_dir" ] && [ -x "$local_hook" ]; then
+  exec "$local_hook" "$@"
+fi
+exit 0
