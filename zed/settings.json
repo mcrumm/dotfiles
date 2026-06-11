@@ -1,32 +1,32 @@
 {
   "cli_default_open_behavior": "existing_window",
   "project_panel": {
-    "dock": "left"
+    "dock": "left",
   },
   "outline_panel": {
-    "dock": "left"
+    "dock": "left",
   },
   "collaboration_panel": {
-    "dock": "left"
+    "dock": "left",
   },
   "agent": {
     "dock": "right",
     "favorite_models": [],
-    "model_parameters": []
+    "model_parameters": [],
   },
   "git_panel": {
-    "dock": "left"
+    "dock": "left",
   },
   "telemetry": {
     "diagnostics": false,
-    "metrics": false
+    "metrics": false,
   },
   "vim_mode": false,
   "ui_font_family": "Monaspace Neon",
   "ui_font_size": 16,
   "buffer_font_family": "Monaspace Neon",
-  "buffer_font_size": 14,
+  "buffer_font_size": 15,
   "theme": "One Dark",
   "format_on_save": "on",
-  "tab_size": 2
+  "tab_size": 2,
 }
