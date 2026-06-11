@@ -1,0 +1,35 @@
+#!/bin/zsh
+#
+# Usage:
+#   qr <text>           # render text as a QR code in the terminal
+#   echo <text> | qr    # read from stdin
+#   qr -o file.png ...  # forward any qrencode flag (e.g. write to PNG)
+#
+# Defaults to ANSIUTF8 output so the code renders on both light and dark
+# terminals. Pass -t <type> to override (UTF8, ANSI, ANSI256, PNG, SVG, ...).
+
+qr () {
+  if ! command -v qrencode >/dev/null 2>&1; then
+    print -u2 "qr: qrencode not installed (brew install qrencode)"
+    return 127
+  fi
+
+  local has_type=0 has_input=0
+  for arg in "$@"; do
+    case "$arg" in
+      -t|--type|-t*|--type=*) has_type=1 ;;
+      -*) ;;
+      *) has_input=1 ;;
+    esac
+  done
+
+  local -a opts
+  (( has_type )) || opts+=(-t ANSIUTF8)
+
+  if (( has_input )) || [[ ! -t 0 ]]; then
+    qrencode "${opts[@]}" "$@"
+  else
+    print -u2 "usage: qr <text>   |   echo <text> | qr"
+    return 2
+  fi
+}
